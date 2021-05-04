@@ -44,8 +44,11 @@ const item = e.target;
 //delete todo 
 if (item.classList[0] === 'trash-btn') {
     const todo = item.parentElement;
+    //Animation
     todo.classList.add('fall');
-    todo.remove()
+    todo.addEventListener('transitioned', function(){
+        todo.remove();
+      }); 
     }
 
 //check mark
